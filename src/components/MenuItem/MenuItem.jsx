@@ -6,6 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import {NavLink} from 'react-router-dom';
 
 const StyledMenu = withStyles({
   paper: {
@@ -69,7 +70,9 @@ export default function CustomizedMenus(props) {
       >
         {props.items.map(item => 
             <StyledMenuItem>
+              <NavLink exact to={item.to} style={{ textDecoration: "none" }}>
                 <ListItemText primary={item.name} />
+              </NavLink>
             </StyledMenuItem>
         )}
       </StyledMenu>

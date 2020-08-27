@@ -45,7 +45,7 @@ const PageLayout = (props) => {
       },
       {
           name: "Page 2 (Empty)",
-          to: "/"
+          to: "/empty"
       }
   ]
 
