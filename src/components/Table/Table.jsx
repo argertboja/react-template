@@ -38,7 +38,7 @@ export default function SimpleTable(props) {
               <TableCell align="right">{row.long}</TableCell>
               <TableCell align="right">{row.lat}</TableCell>
               <TableCell align="right">
-                <Button variant="contained">Button</Button>
+                <Button variant="contained" onClick={() => props.handleDelete(row.id)}>DELETE</Button>
               </TableCell>
             </TableRow>
           ))}

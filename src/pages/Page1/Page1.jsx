@@ -19,12 +19,16 @@ class Page1 extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
     }
 
     handleSubmit() {
         var oldState = {...this.state}
         var oldData = oldState.data
-        var lastId = oldData[oldData.length - 1].id + 1
+        var lastId = 1
+        if (oldData.length > 0) {
+            lastId = oldData[oldData.length - 1].id + 1
+        }
         var newData = oldData.concat({
             id: lastId,
             long: this.state.longtitude,
@@ -39,10 +43,17 @@ class Page1 extends React.Component {
         })
     }
 
+    handleDelete(id) {
+        var oldState = {...this.state}
+        var oldData = oldState.data
+        var newData = oldData.filter(data => data.id !== id)
+        this.setState({data: newData})
+    }
+
     render() {
         return (
             <PageLayout>
-                <Table data={this.state.data}/>
+                <Table data={this.state.data} handleDelete={this.handleDelete}/>
                 <TableInput 
                     handleChange={this.handleChange} 
                     handleSubmit={this.handleSubmit} 
