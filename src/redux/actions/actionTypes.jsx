@@ -1,0 +1,2 @@
+export const FETCH_LOCATIONS = "FETCH_LOCATIONS"
+export const NEW_LOCATION = "NEW_LOCATION"
