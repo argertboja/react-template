@@ -11,6 +11,15 @@ export default function(state=initialState, action) {
             return {
                 ...state,
                 locations: action.payload
+            };
+        case actions.ADD_LOCATION:
+            return { 
+                ...state,
+                locations: action.payload};
+        case actions.DELETE_LOCATION:
+            return {
+                ...state,
+                locations: action.payload
             }
         default:
             return state;
