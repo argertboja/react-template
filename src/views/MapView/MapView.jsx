@@ -25,12 +25,6 @@ class MapView extends React.Component {
     }
 
     handleSubmit() {
-        var oldLocations = {...this.props.locations}
-        var lastId = 1
-        if (oldLocations.length > 0) {
-            lastId = oldLocations[oldLocations.length - 1].id + 1
-        }
-
         var newLocation = {
             long: this.state.longtitude,
             lat: this.state.latitude

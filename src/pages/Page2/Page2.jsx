@@ -5,10 +5,6 @@ import EmptyView from "views/EmptyView";
 
 class Page2 extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <React.Fragment>
